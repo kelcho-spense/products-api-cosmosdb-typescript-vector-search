@@ -1,0 +1,69 @@
+### GET ALL PRODUCTS
+GET http://localhost:8000/api/products
+Accept: application/json
+
+###  CREATE A PRODUCT
+POST http://localhost:8000/api/products
+Content-Type: application/json
+
+{
+    "name": "Wireless Charging Pad",
+    "brand": "ChargeWave",
+    "sku": "SKU-1010",
+    "category": "Mobile Accessories",
+    "price": 29.99,
+    "currency": "USD",
+    "stock": 450,
+    "description": "Conveniently charge your devices with the ChargeWave Wireless Charging Pad. Compatible with all Qi-enabled devices and features fast charging capabilities.",
+    "features": "Qi-Compatible, Fast Charging, Non-Slip Surface, LED Indicator, Slim Design, Overcharge Protection",
+    "rating": 4.3,
+    "reviewsCount": 1340,
+    "tags": ["charging", "wireless", "mobile", "accessories", "fast-charging"],
+    "imageUrl": "https://example.com/images/products/SKU-1010.jpg",
+    "manufacturer": "ChargeWave Ltd.",
+    "model": "CW-WCP300",
+    "releaseDate": "2023-07-05",
+    "warranty": "1 year",
+    "dimensions": {
+      "weight": "200g",
+      "width": "10cm",
+      "height": "1cm",
+      "depth": "10cm"
+    },
+    "color": "White",
+    "material": "Plastic",
+    "origin": "South Korea"
+}
+
+### GET PRODUCT VIA ID
+GET http://localhost:8000/api/products/b56530fc-cbbb-440d-96d0-d047b3579814
+
+### SEARCH BY TAGS VECTOR
+POST http://localhost:8000/api/products/search/tags
+Content-Type: application/json
+
+{
+    "queryTags": ["aud","video","smart","tv"],
+    "top": 5
+}
+
+### SEARCH BY FEATURES VECTOR
+POST http://localhost:8000/api/products/search/features
+Content-Type: application/json
+
+{
+    "queryFeatures": ["Voice","Remote"],
+    "top": 2
+}
+
+
+### SEARCH BY DESCRIPTION VECTOR
+POST http://localhost:8000/api/products/search/description
+Content-Type: application/json
+    
+{
+    "queryDescription": ["KEYBOARD Smart LED Light Bulbs"],
+    "top": 10
+}
+
+
