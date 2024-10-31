@@ -1,5 +1,35 @@
 # Products API with Express, TypeScript, and Azure Cosmos DB (NoSQL) using Vector Search
-In this guide, we will build a Products API using Express and TypeScript, and integrate Azure Cosmos DB (with vector search capabilities) for managing product data. We'll also implement vector search, enabling us to query items based on vector similarity.
+![](./images/vector%20search.drawio.png)
+
+In the competitive landscape of e-commerce, delivering precise and relevant search results is crucial for enhancing user experience and driving sales. Traditional keyword-based search methods often struggle to grasp the nuanced intentions behind user queries. This is where **vector similarity search** comes into play, leveraging advanced embedding techniques to provide more accurate and context-aware search results. In this blog, we'll walk you through implementing vector similarity search in an e-commerce products API using **Azure Cosmos DB for NoSQL** and **TypeScript(JavaScript)**.
+
+## Introduction to Vector Similarity Search
+![](./images/vector%20database.drawio.png)
+Vector similarity search is a powerful technique that transforms data into high-dimensional vectors (embeddings) and enables the comparison of these vectors to find similarities. In the context of e-commerce, this allows for more intelligent product searches, recommendations, and categorization by understanding the semantic meaning behind product descriptions, tags, and features.
+### Embeddings
+![](./images/Embeddings.drawio.png)
+Modern machine learning models can be trained to convert raw data into embeddings, represented as arrays (or vectors) of floating point numbers of fixed dimensionality. What makes embeddings useful in practice is that the position of an embedding in vector space captures some of the semantics of the data, depending on the type of model and how it was trained. Points that are close to each other in vector space are considered similar (or appear in similar contexts), and points that are far away are considered dissimilar.
+
+Large datasets of multi-modal data (text, audio, images, etc.) can be converted into embeddings with the appropriate model. Projecting the vectors' principal components in 2D space results in groups of vectors that represent similar concepts clustering together, as shown below.
+### Indexes
+Embeddings for a given dataset are made searchable via an index. The index is constructed by using data structures that store the embeddings such that it's very efficient to perform scans and lookups on them
+### Brute force search
+![](./images/Brute%20force%20search.drawio.png)
+The simplest way to perform vector search is to perform a brute force search, without an index, where the distance between the query vector and all the vectors in the database are computed, with the top-k closest vectors returned. This is equivalent to a k-nearest neighbours (kNN) search in vector space.
+
+As you can imagine, the brute force approach is not scalable for datasets larger than a few hundred thousand vectors, as the latency of the search grows linearly with the size of the dataset. This is where approximate nearest neighbour (ANN) algorithms come in.
+
+## Overview of Azure Cosmos DB Vector Search
+
+**Azure Cosmos DB for NoSQL** now offers a vector search feature in preview, designed to handle high-dimensional vectors efficiently and accurately at any scale. This feature allows you to store vectors directly within your documents alongside traditional schema-free data. By colocating data and vectors, Azure Cosmos DB ensures efficient indexing and searching, simplifying data management and enhancing AI application architectures.
+
+Key capabilities include:
+
+- **Vector Embedding Policies:** Define how vectors are generated and stored within your documents.
+- **Vector Indexing:** Optimize data retrieval based on vector similarities using various indexing methods.
+- **Vector Distance Functions:** Utilize metrics like Cosine, Dot Product, and Euclidean to measure similarity.
+
+By integrating vector similarity search into your e-commerce API, you can significantly enhance the relevance and personalization of search results.
 
 ## Prerequisites
 - Node.js installed on your system
