@@ -6,9 +6,9 @@ In this guide, we will build a Products API using Express and TypeScript, and in
 - An Azure Cosmos DB for NoSQL account
 - Register for Azure Cosmos DB Vector Search `preview` as described in your input
 
-# Getting Started
+# Getting Started with a detailed blog 👇👇
 
-[Quick Start to this project](./Blog.md)
+[Quick Start to this project](./https://techcommunity.microsoft.com/t5/educator-developer-blog/enhancing-e-commerce-product-search-with-vector-similarity-in/ba-p/4282881)
 
 Or
 
