@@ -1,9 +1,10 @@
 # Products API with Express, TypeScript, and Azure Cosmos DB (NoSQL) using Vector Search
 ![](./images/vector%20search.drawio.png)
 
+In the competitive landscape of e-commerce, delivering precise and relevant search results is crucial for enhancing user experience and driving sales. Traditional keyword-based search methods often struggle to grasp the nuanced intentions behind user queries. This is where **vector similarity search** comes into play, leveraging advanced embedding techniques to provide more accurate and context-aware search results. In this blog, we'll walk you through implementing vector similarity search in an e-commerce products API using **Azure Cosmos DB for NoSQL** and **TypeScript(JavaScript)**.
+
 ### [Please read the full article about this sample at techcommunity.microsoft.com](https://techcommunity.microsoft.com/blog/educatordeveloperblog/enhancing-e-commerce-product-search-with-vector-similarity-in-azure-cosmos-db/4282881)
 
-In the competitive landscape of e-commerce, delivering precise and relevant search results is crucial for enhancing user experience and driving sales. Traditional keyword-based search methods often struggle to grasp the nuanced intentions behind user queries. This is where **vector similarity search** comes into play, leveraging advanced embedding techniques to provide more accurate and context-aware search results. In this blog, we'll walk you through implementing vector similarity search in an e-commerce products API using **Azure Cosmos DB for NoSQL** and **TypeScript(JavaScript)**.
 
 ## Introduction to Vector Similarity Search
 ![](./images/vector%20database.drawio.png)
